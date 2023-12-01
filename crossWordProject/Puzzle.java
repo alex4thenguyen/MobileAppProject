@@ -15,6 +15,7 @@ public class Puzzle {
     public Puzzle(ArrayList<String> words2Guess, ArrayList<String> hints) {
         this.words2Guess = words2Guess;
         this.hints = hints;
+        //Userstory 2
         for (String word : words2Guess) {
             for (char ch : word.toCharArray()) {
                 if (!uniqueLetters.contains(ch)) {
@@ -23,6 +24,7 @@ public class Puzzle {
             }
         }
     }
+    //Userstory 7
     //See if the puzzle is solved through user's multiple guesses
     public void guess(String word) {
         

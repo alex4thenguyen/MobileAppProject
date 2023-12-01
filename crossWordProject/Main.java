@@ -28,6 +28,7 @@ public class Main {
         // Create a Puzzle object with the words and hints
         Puzzle puzzle1 = new Puzzle(words2Guess1, hints1);
         
+        //Userstory 10
         System.out.println("Welcome to the Word Puzzle Game!");
         System.out.println("You will be given a list of letters to guess words and their corresponding hints.");
         System.out.println("You will be given a score based on the number of words you guess correctly.");
@@ -65,9 +66,7 @@ public class Main {
             System.out.println(puzzle);
         }
 
-        // Print the final status of the puzzle
-        System.out.println(puzzle);
-
+        
         input.close();
     }
 
