@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CrosswordGameActivity">
+
+    <GridLayout
+        android:id="@+id/crosswordGrid"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_margin="16dp"
+        android:rowCount="5"
+        android:columnCount="5"
+        android:orientation="horizontal"
+        android:layout_above="@+id/cluesLayout"
+        android:background="#FFFFFF">
+
+        <!-- Add crossword grid cells here -->
+
+    </GridLayout>
+
+    <LinearLayout
+        android:id="@+id/cluesLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:background="#eb7e8a"
+        android:padding="16dp">
+
+        <!-- Add clues and other elements here -->
+
+    </LinearLayout>
+
+    <!-- Add UI elements for the crossword game screen -->
+
+</RelativeLayout>
