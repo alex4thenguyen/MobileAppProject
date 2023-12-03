@@ -2,7 +2,8 @@ import java.util.*;
 
 public class Puzzle {
     //Instance variables
-    private ArrayList<String> words2Guess = new ArrayList<>(); //Words to guess
+    private ArrayList<String> words2Guess; //Words to guess
+    private ArrayList<String>  originalWords2Guess; // Stores the original list of words
     private boolean isSolved = false; //If puzzle is solved
     private ArrayList<String> guessedWords = new ArrayList<>(); //Words guessed
     private ArrayList<String> hints = new ArrayList<>(); //Hints for words
@@ -13,7 +14,8 @@ public class Puzzle {
 
     //Constructor
     public Puzzle(ArrayList<String> words2Guess, ArrayList<String> hints) {
-        this.words2Guess = words2Guess;
+        this.originalWords2Guess = new ArrayList<>(words2Guess); // Store original list
+        this.words2Guess = new ArrayList<>(words2Guess);
         this.hints = hints;
         //Userstory 2
         for (String word : words2Guess) {
@@ -94,6 +96,44 @@ public class Puzzle {
         System.out.println("You have guessed the following words: " + guessedWords);
         System.out.println("You have guessed the following words correctly: " + correctGuessedWords);
         System.out.println("You have " + words2Guess.size() + " words left to guess.");
+    }
+
+    public void resetPuzzle() {
+        isSolved = false;
+        guessedWords.clear();
+        correctGuessedWords.clear(); // Clear the list of correctly guessed words
+        words2Guess = new ArrayList<>(originalWords2Guess); // Reset to original list
+        score = 0; 
+        deduction = 0;
+    }
+    
+    //Setters
+    public void setWords2Guess(ArrayList<String> words2Guess) {
+        this.words2Guess = words2Guess;
+    }
+
+    public void setHints(ArrayList<String> hints) {
+        this.hints = hints;
+    }
+
+    public void setUniqueLetters(ArrayList<Character> uniqueLetters) {
+        this.uniqueLetters = uniqueLetters;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    public void setSolved(boolean isSolved) {
+        this.isSolved = isSolved;
+    }
+
+    public void setGuessedWords(ArrayList<String> guessedWords) {
+        this.guessedWords = guessedWords;
+    }
+
+    public void setCorrectGuessedWords(ArrayList<String> correctGuessedWords) {
+        this.correctGuessedWords = correctGuessedWords;
     }
 
     //Getters
